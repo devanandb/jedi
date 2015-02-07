@@ -6,8 +6,8 @@
 			{{article.title}}
 
 			<div>{{article.field_tags}}</div>
-			<div>{{article.field_image}}</div>
-			<div>{{article.field_image}}</div>
+			<div ng-bind-html="article.field_image | secureHtml"></div>
+
 
 		</li>
 	</ul>
