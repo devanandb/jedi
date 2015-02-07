@@ -23,6 +23,10 @@
       {
         "name": "pages",
         "file": "pages/pages.js"
+      },
+      {
+        "name": "articles",
+        "file": "articles\\articles.js"
       }
     ]
   }

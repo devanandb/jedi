@@ -1,8 +1,4 @@
-angular.module('pages').controller('HomeCtrl',function($scope, $http){
-
-	
-
-    $scope.categories =[];
+angular.module('articles').controller('ArticlesCtrl',function($scope, $http){
 
 	$http.get('http://designjedi.demofied.com/api/categories').
 	    success(function(data, status, headers, config) {
@@ -21,5 +17,4 @@ angular.module('pages').controller('HomeCtrl',function($scope, $http){
 	    error(function(data, status, headers, config) {
 	      // log error
 		});
-
 });
