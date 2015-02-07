@@ -1,12 +1,17 @@
-<div class="uk-container uk-container-center" ng-controller="HomeCtrl">
-	
-	
-	<!-- <div class="uk-panel" ng-repeat="article in articles">
-		<div>{{article.title}}</div>
+<div ng-controller="HomeCtrl">
+	<div class="hero-blk uk-cover-background uk-height-viewport">
+		<div class="uk-container uk-container-center uk-height-1-1 uk-vertical-align">
+			<h1 class="hero-txt uk-vertical-align-middle">
+				<span> I am a senior UX leader who loves to inspire </span><br> <span>and be inspired by design.</span> 
+			</h1>
+		</div>
+		<div class="down-arrow">
+			<a href="#leadership" data-uk-smooth-scroll><i class="uk-icon-angle-down"></i></a>
+		</div>
+	</div>
 
-		{! article.field_banner_image }
-	</div> -->
-
-	<input type="text" ng-model="name"> Hello {{name}}
+	<div class="content-blk uk-cover-background uk-height-viewport" ng-repeat="category in categories">
+		{{category.field_banner_image | secureHtml}}
+	</div>
 
 </div>
