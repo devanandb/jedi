@@ -1,0 +1,26 @@
+<div  ng-controller="DetailCtrl">
+
+	<div class="hero-cont">
+		<div ng-bind-html="article.field_hero_image | secureHtml"></div>
+
+		<h1>{{article.title}}</h1>
+	</div>
+
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid article-content">
+			<div class="uk-width-7-10">
+				<div ng-bind-html="article.body | secureHtml"></div>
+			</div>
+
+			<div class="uk-width-3-10">
+				<div class="cnt-tags">
+					<span ng-repeat="tag in article.ctags">
+						<a ng-href="#/tag/{{tag}}">{{tag}}</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+</div>
