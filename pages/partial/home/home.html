@@ -5,13 +5,19 @@
 				<span> I am a senior UX leader who loves to inspire </span><br> <span>and be inspired by design.</span> 
 			</h1>
 		</div>
-		<div class="down-arrow">
+		<!-- <div class="down-arrow">
 			<a href="#leadership" data-uk-smooth-scroll><i class="uk-icon-angle-down"></i></a>
-		</div>
+		</div> -->
+	</div>
+	<div class="content-blk uk-cover-background uk-height-viewport" ng-repeat="category in categories">
+		<div class="img-holder" ng-bind-html="category.field_banner_image | secureHtml"></div>
+		<!-- <div class="clearfix">&nbsp;</div> -->
+			<div class="content-holder">
+				<div class="uk-width-1-2 uk-container-center">
+					<div class="content-txt" ng-bind-html="category.body_1 | secureHtml"></div>
+				</div>
+			</div>
 	</div>
 
-	<div class="content-blk uk-cover-background uk-height-viewport" ng-repeat="category in categories">
-		{{category.field_banner_image | secureHtml}}
-	</div>
 
 </div>
