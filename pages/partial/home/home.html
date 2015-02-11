@@ -8,14 +8,29 @@
 		<!-- <div class="down-arrow">
 			<a href="#leadership" data-uk-smooth-scroll><i class="uk-icon-angle-down"></i></a>
 		</div> -->
+		<div class="next-blk">
+			<a href="#0" data-uk-smooth-scroll class=""><i class="uk-icon-angle-down bounce"></i></a>
+		</div>
 	</div>
-	<div class="content-blk uk-cover-background uk-height-viewport" ng-repeat="category in categories">
-		<div class="img-holder" ng-bind-html="category.field_banner_image | secureHtml"></div>
+	<div class="content-blk uk-cover-background uk-height-viewport" ng-repeat="category in categories" style="background-image:url({{category.field_hero_image[1]}}); background-size:cover;" id="{{$index}}">
+		<!-- <div ng-bind-html="category.field_hero_image | secureHtml">
+		  
+		</div> -->
+		<!-- <div class="img-holder" ng-bind-html="category.field_hero_image | secureHtml"></div> -->
 		<!-- <div class="clearfix">&nbsp;</div> -->
 			<div class="content-holder">
-				<div class="uk-width-1-2 uk-container-center">
-					<div class="content-txt" ng-bind-html="category.body_1 | secureHtml"></div>
+				<div class="uk-container uk-container-center">
+					<div class="uk-width-2-3 uk-container-center uk-vertical-align">
+						<div class="content-txt uk-vertical-align-middle" ng-bind-html="category.body | secureHtml"></div>
+						<div class="link-blk">
+							<a ng-href="#/articles/{{category.title}}" class="pg-link">{{category.title}} <i class="uk-icon-angle-double-right"></i></a>
+						</div>
+					</div>
 				</div>
+			</div>
+
+			<div class="next-blk">
+				<a href="#{{$index+1}}" data-uk-smooth-scroll class=""><i ng-hide="$index==2" class="uk-icon-angle-down bounce"></i><i ng-show="$index==2" class="uk-icon-angle-up bounce"></i></a>
 			</div>
 	</div>
 

@@ -1,7 +1,7 @@
 .pg-article {
 	background-color: rgb(248,248,248);
 
-	
+	min-height: 800px;
 }
 
 .hero-cont {
@@ -26,6 +26,12 @@
 		color: #ffffff;
 		font-weight: 300;
 		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+	p {
+		display: block;
+		font-size: 24px;
+		text-transform: none;
 	}
 }
 
@@ -36,9 +42,11 @@
 
 .each-card {
 	.uk-panel-box {
-		background: #ffffff;
+		background: #ffffff;height: 100%;
 	}
-
+	.panel-content {
+		/*background: #ffffff;*/
+	}
 	.headings-p {
 		font-size: 17px;
 		padding: 15px 15px 0px 15px;
@@ -73,4 +81,56 @@
 			}
 		}
 	}
+}
+.clearfix::after {
+	clear: both;
+}
+
+.flip {
+  -webkit-perspective: 800;
+   /*width: 400px;*/
+   /*height: 200px;*/
+    position: relative;
+    /*margin: 50px auto;*/
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+}
+.flip .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+	background: #ffffff !important;
+
+
+}
+.flip .card .face {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+	z-index: 2;
+	font-size: 17px;
+	/*text-align: center;*/
+	line-height: 26px;
+	font-weight: 400;
+}
+.flip .card .front {
+  position: absolute;
+  z-index: 1;
+    /*background: black;*/
+    color: white;
+    cursor: pointer;
+    background-color: #ffffff;
+    background: #ffffff !important;
+
+}
+.flip .card .back {
+  -webkit-transform: rotatey(-180deg);
+    background: #ffffff;
+    background: #ffffff !important;
+    background: #ffffff;
+    color: black;
+    cursor: pointer;
 }

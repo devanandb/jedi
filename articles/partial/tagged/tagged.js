@@ -7,7 +7,7 @@ angular.module('articles').controller('TaggedCtrl',function($rootScope, $scope, 
 	        if (article.ctags.indexOf($routeParams.tag) > -1) {
 				$scope.articles.push(article);
 	        } else {
-				$location.path('/');
+				// $location.path('/');
 	        }
 	    });
 

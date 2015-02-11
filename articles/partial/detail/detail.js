@@ -8,7 +8,7 @@ angular.module('articles').controller('DetailCtrl',function($scope, databank, $r
 	        if (article.nid === $routeParams.id) {
 				$scope.article = article;
 	        } else {
-				$location.path('/');
+				// $location.path('/');
 	        }
 	    });
 
