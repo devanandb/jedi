@@ -9,6 +9,9 @@ angular.module('pages').controller('HomealtCtrl',function($scope, categoryServic
 			
 			$scope.categories.push(category);
 		});
-		
+
+
 	});
+
+	
 });

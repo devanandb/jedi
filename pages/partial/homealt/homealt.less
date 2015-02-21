@@ -45,6 +45,9 @@
 				width: 15px;
 				height: 15px;
 				border-radius: 50%;
+				&:hover {
+					text-decoration:none;
+				}
 
 			}
 			&:first-child {
@@ -66,10 +69,132 @@
 	}
 }
 
-.hero-blk.home-alt {
-	/*-webkit-filter: blur(5px);
-	  -moz-filter: blur(5px);
-	  -o-filter: blur(5px);
-	  -ms-filter: blur(5px);
-	  filter: blur(5px);*/
+.dot {
+	background-color: #68f2bd;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	margin-right: 14px;
+	margin-left: -30px;
+	margin-top: 20px;
+	position: absolute;
+}
+
+a[href*="design"] {
+	.dot {
+		background-color: #c65de0;
+
+	}
+	/*color:#c65de0 !important;*/
+}
+
+a[href*="leadership"] {
+	.dot {
+		background-color: #f26c68;
+
+	}
+	/*color:#f26c68 !important;*/
+}
+a[href*="life"] {
+	.dot {
+		background-color: #68f2bd;
+
+	}
+	/*color:#68f2bd !important;*/
+}
+
+.sub-blk {
+	margin-top: -50px;
+	text-align: left;
+	width: 100%;
+	color: #eee;
+	.blk-title {
+		font-size: 50px;
+		line-height: 50px;
+		font-family: 'Shadows Into Light', cursive;
+		a {
+			color: #fff;
+			letter-spacing: 2px;
+			padding-left: 30px;
+			  i {
+			  	position: absolute;
+			  	margin-left: 8px;
+			  	-webkit-transition: all 0.4s ease-in-out;
+			  -moz-transition: all 0.4s ease-in-out;
+			  -o-transition: all 0.4s ease-in-out;
+			  transition: all 0.4s ease-in-out;
+			  }
+			&:hover {
+				text-decoration:none;
+				i {
+					margin-left: 16px;
+				}
+			}
+		}
+	}
+	.blk-desc {
+		font-size: 24px;
+		margin:30px auto;
+		font-weight: 100;
+		letter-spacing: 1px;
+		line-height: 40px;
+		/*width: 40%;*/
+		display: inline-block;
+		/*text-shadow:0px 0px 5px #333333;*/
+	}
+	.links-blk {
+		padding:0px;
+		/*font-family: 'Shadows Into Light', cursive;*/
+		margin:0px;
+		font-size: 28px;
+		/*margin-top: 50px;*/
+
+	}
+}
+
+
+@media (min-width: @breakpoint-large) {
+
+    .uk-visible-small { display: none !important; }
+    .uk-visible-medium { display: none !important; }
+    .uk-hidden-large { display: none !important; }
+
+}
+
+/* Tablets portrait */
+@media (min-width: @breakpoint-medium) and (max-width: @breakpoint-medium-max) {
+
+    .uk-visible-small { display: none !important; }
+    .uk-visible-large { display: none !important ; }
+    .uk-hidden-medium { display: none !important; }
+
+}
+
+/* Phone landscape and smaller*/
+@media (max-width: @breakpoint-small-max) {
+	
+	.sub-blk {
+		.blk-title {
+			font-size: 36px;
+			line-height: 40px;
+		}
+		.blk-desc {
+	    	font-size: 22px;
+	    	line-height: 26px;
+	    }
+	}
+
+	.jumbo-blk {
+		.links-blk {
+			margin-top: 50px;
+		}
+	}
+	.dot {
+		margin-top: 13px;
+	}
+
+	
+    
+
 }

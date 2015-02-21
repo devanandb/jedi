@@ -8,7 +8,7 @@
 			<div class="uk-height-1-1 uk-vertical-align">
 				<div class="jumbo-blk uk-vertical-align-middle">
 					<div class="blk-title">Jim Nieters</div>
-					<div class="blk-desc">
+					<div class="blk-desc uk-hidden-small">
 						I am a ux leader who loves to inspire and be inspired by design. Lorem ipsum dolor sit amet.
 					</div>
 					<ul class="links-blk" data-uk-sticky="{top:30}">
@@ -38,12 +38,22 @@
 		</div> -->
 		<!-- <div class="img-holder" ng-bind-html="category.field_hero_image | secureHtml"></div> -->
 		<!-- <div class="clearfix">&nbsp;</div> -->
-			<div class="content-holder">
-				<div class="uk-container uk-container-center">
+			<div class="content-holder uk-height-1-1 uk-vertical-align">
+				<!-- <div class="uk-container uk-container-center">
 					<div class="uk-width-2-3 uk-container-center uk-vertical-align">
-						<div class="content-txt uk-vertical-align-middle" ng-bind-html="category.body | secureHtml"></div>
 						<div class="link-blk">
 							<a ng-href="#/articles/{{category.title}}" class="pg-link">{{category.title}} <i class="uk-icon-angle-right"></i></a>
+						</div>
+						<div class="content-txt uk-vertical-align-middle" ng-bind-html="category.body | secureHtml"></div>
+						
+					</div>
+				</div> -->
+				<div class="sub-blk uk-vertical-align-middle">
+					<div class="uk-container uk-container-center">
+						<div class="blk-title">
+							<a ng-href="#/articles/{{category.title}}"><span class="dot"></span>{{category.title}} <i class="uk-icon-angle-right"></i></a>
+						</div>
+						<div class="blk-desc" ng-bind-html="category.body | secureHtml">
 						</div>
 					</div>
 				</div>
