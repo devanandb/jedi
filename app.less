@@ -1,5 +1,16 @@
-@import "bower_components/uikit/less/uikit.less";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
+@import "bower_components/uikit/less/uikit.less";
+@import "bower_components/uikit/less/core/grid.less";
+@import "bower_components/uikit/less/core/overlay.less";
+@import "bower_components/uikit/less/components/flex.less";
+@import "bower_components/uikit/less/components/sticky.less";
+
+
+
+@base-body-font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@base-heading-font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 /* Component LESS */
@@ -24,4 +35,111 @@
 
 body{
   overflow-x:hidden;
+}
+
+.logo {
+	display: inline-block;
+	float: left;
+	font-size: 40px;
+	padding:30px;
+	padding-left: 0px;
+	font-family: 'Shadows Into Light', cursive;
+	/*font-family: 'Architects Daughter', cursive;*/
+	color: #eee;
+	&:hover {
+		text-decoration:none;
+		color: #ffffff;
+	}
+}
+
+.secondary-nav {
+	padding:0px;
+	margin:0px;
+	float: right;
+	li {
+		display: inline-block;
+		padding-top: 30px;
+		margin-left: 40px;
+		a {
+			
+			font-size: 16px;
+			color: #dddddd;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			display: inline-block;
+			&:hover {
+				text-decoration:none;
+				color: #ffffff;
+			}
+
+		}
+	}
+}
+.footer-blk {
+	border-top:1px solid #dddddd;
+	background-color: #f8f8f8;
+	text-align: center;
+}
+
+.footer-nav {
+	
+	padding:0px;
+	margin:0px;
+	float: right;
+	li {
+		display: inline-block;
+		padding: 20px 0px;
+		margin-left: 15px;
+		a {
+			
+			font-size: 16px;
+			color: #aaa;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			display: inline-block;
+			&:hover {
+				text-decoration:none;
+				color: #888;
+			}
+
+		}
+	}
+}
+.footer-links {
+	padding:0px;
+	margin:0px;
+	margin-top: 20px;
+	float: left;
+	li {
+		display: inline-block;
+		padding: 0px;
+		margin-right: 5px;
+		&:before {
+			content:'\00B7';
+			padding-right:5px;
+		}
+		&:first-child:before {
+			content:'';
+		}
+		a {
+			
+			font-size: 13px;
+			color: #555;
+			text-transform: capitalize;
+			letter-spacing: 1px;
+			display: inline-block;
+			&:hover {
+				text-decoration:none;
+				color: #222;
+			}
+
+		}
+	}
+}
+
+.footer-copy {
+	margin:20px 0px;
+	display: inline-block;
+	font-size: 12px;
+	color: #aaa;
 }

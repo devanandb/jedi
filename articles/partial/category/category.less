@@ -2,58 +2,121 @@
 	background-color: rgb(248,248,248);
 
 	min-height: 800px;
+	padding-bottom: 100px;
 }
 
 .hero-cont {
 	position: relative;
-	height: 40vh;
-	overflow: hidden;
-	img {
+	height: auto;
+	/*overflow: hidden;*/
+	background-position: center top;
+	
+	/*img {
 		position: absolute;
 		z-index: 1;
 		width: 100%;
 		margin-top: -200px;
+	}*/
+	.hero-pg {
+		background-color: rgba(10,10,10,0.6);
 	}
-	h1 {
-		margin:0px;
-		padding: 60px 100px;
+	.pgtitle {
+		padding-top: 35vh;
 		z-index: 10;
-		position: absolute;
-		/*width: 60%;*/
 		margin: auto;
-		/*text-align: center;*/
-		/*right: 0px;*/
 		color: #ffffff;
 		font-weight: 300;
-		letter-spacing: 1px;
-		text-transform: uppercase;
+		font-family: 'Shadows Into Light', cursive;
+		letter-spacing: 2px;
+		text-align: right;
+		font-size: 44px;
+		padding-bottom: 20px;
+		text-transform: lowercase;
+		text-shadow:0px 0px 8px #000;
+		span {
+			display: inline-block;
+			/*border-bottom: 3px dotted #eeeeee;*/
+			padding-bottom: 8px;
+			line-height: 60px;
+			i {
+				font-size: 30px;
+			}
+		}
 	}
 	p {
 		display: block;
 		font-size: 24px;
+		line-height: 30px;
 		text-transform: none;
+		font-weight: 300;
+		color: #ffffff;
+		margin-left: 60px;
+		/*letter-spacing: 1px;*/
+		padding-bottom: 25px;
+		text-align: right;
+		text-shadow:0px 0px 8px #000;
+		font-weight: 300;
+	}
+}
+
+.hero-cont.tagpg {
+	height:auto;
+	background-position: center center;
+	.pgtitle {
+		padding-bottom: 60px;
+	}
+	.pgtitle span {
+		/*padding-bottom: 12px;*/
+		border-bottom: 0px;
+	}
+}
+.hero-cont.tagpg {
+	height:auto;
+	background-position: center center;
+	.pgtitle {
+		padding-bottom: 60px;
+	}
+	.pgtitle span {
+		/*padding-bottom: 12px;*/
+		border-bottom: 0px;
 	}
 }
 
 .matrix {
-	margin-top: 80px;
+	padding-top: 80px;
 }
 
 
 .each-card {
+	margin-bottom: 35px;
 	.uk-panel-box {
 		background: #ffffff;height: 100%;
+	border:1px solid #ddd;
+	box-shadow: 0px 0px 7px #ddd;
 	}
 	.panel-content {
 		/*background: #ffffff;*/
 	}
+	.uk-panel-teaser {
+		background: #ffffff;
+		margin-bottom: 0px;
+		> div {
+			overflow:hidden;
+    		position:relative;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
 	.headings-p {
 		font-size: 17px;
-		padding: 15px 15px 0px 15px;
-		font-weight: 500;
+		padding: 15px 15px 15px 15px;
+		font-weight: 600;
 		line-height: 24px;
-		color: #333333;
+		color: #4e86ab;
 		display: inline-block;
+		border-top: 1px solid #dddddd;
 		/*a {
 			color: #000;
 		}*/
@@ -67,7 +130,7 @@
 			color: #555;
 			font-size: 12px;
 			font-weight: 300;
-			letter-spacing: 1px;
+			/*letter-spacing: 1px;*/
 			display: inline-block;
 			padding:3px 6px;
 			background-color: #efefef;
@@ -82,55 +145,6 @@
 		}
 	}
 }
-.clearfix::after {
+.clearfix {
 	clear: both;
-}
-
-.flip {
-  -webkit-perspective: 800;
-   /*width: 400px;*/
-   /*height: 200px;*/
-    position: relative;
-    /*margin: 50px auto;*/
-}
-.flip .card.flipped {
-  -webkit-transform: rotatey(-180deg);
-}
-.flip .card {
-  width: 100%;
-  height: 100%;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: 0.5s;
-	background: #ffffff !important;
-
-
-}
-.flip .card .face {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	-webkit-backface-visibility: hidden;
-	z-index: 2;
-	font-size: 17px;
-	/*text-align: center;*/
-	line-height: 26px;
-	font-weight: 400;
-}
-.flip .card .front {
-  position: absolute;
-  z-index: 1;
-    /*background: black;*/
-    color: white;
-    cursor: pointer;
-    background-color: #ffffff;
-    background: #ffffff !important;
-
-}
-.flip .card .back {
-  -webkit-transform: rotatey(-180deg);
-    background: #ffffff;
-    background: #ffffff !important;
-    background: #ffffff;
-    color: black;
-    cursor: pointer;
 }

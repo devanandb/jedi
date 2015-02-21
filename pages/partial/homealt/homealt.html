@@ -1,0 +1,56 @@
+<div class="col-md-12" ng-controller="HomealtCtrl">
+
+	<div class="hero-blk uk-height-1-1 uk-cover-background uk-height-viewport home-alt">
+		<!-- <div class="uk-height-1-1 uk-vertical-align"> -->
+			<!-- <h1 class="hero-txt uk-vertical-align-middle">
+				<span> I am a senior UX leader who loves to inspire </span><br> <span>and be inspired by design.</span> 
+			</h1> -->
+			<div class="uk-height-1-1 uk-vertical-align">
+				<div class="jumbo-blk uk-vertical-align-middle">
+					<div class="blk-title">Jim Nieters</div>
+					<div class="blk-desc">
+						I am a ux leader who loves to inspire and be inspired by design. Lorem ipsum dolor sit amet.
+					</div>
+					<ul class="links-blk" data-uk-sticky="{top:30}">
+						<li><a data-uk-smooth-scroll ng-href="#0">&nbsp;</a></li>
+						<li><a data-uk-smooth-scroll ng-href="#1">&nbsp;</a></li>
+						<li><a data-uk-smooth-scroll ng-href="#2">&nbsp;</a></li>
+						<li><a data-uk-smooth-scroll ng-href="#">&nbsp;</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- <div class="uk-container uk-container-center ">
+				<div class="uk-text-center hero-txt">
+					Jim Nieters
+				</div>
+			</div> -->
+		<!-- </div> -->
+		<!-- <div class="down-arrow">
+			<a href="#leadership" data-uk-smooth-scroll><i class="uk-icon-angle-down"></i></a>
+		</div> -->
+		<div class="next-blk">
+			<a href="#0" data-uk-smooth-scroll class=""><i class="uk-icon-angle-down bounce"></i></a>
+		</div>
+	</div>
+	<div class="content-blk uk-cover-background uk-height-viewport" ng-repeat="category in categories" style="background-image:url({{category.field_hero_image[1]}}); background-size:cover;" id="{{$index}}">
+		<!-- <div ng-bind-html="category.field_hero_image | secureHtml">
+		  
+		</div> -->
+		<!-- <div class="img-holder" ng-bind-html="category.field_hero_image | secureHtml"></div> -->
+		<!-- <div class="clearfix">&nbsp;</div> -->
+			<div class="content-holder">
+				<div class="uk-container uk-container-center">
+					<div class="uk-width-2-3 uk-container-center uk-vertical-align">
+						<div class="content-txt uk-vertical-align-middle" ng-bind-html="category.body | secureHtml"></div>
+						<div class="link-blk">
+							<a ng-href="#/articles/{{category.title}}" class="pg-link">{{category.title}} <i class="uk-icon-angle-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="next-blk">
+				<a href="#{{$index+1}}" data-uk-smooth-scroll class=""><i ng-hide="$index==2" class="uk-icon-angle-down bounce"></i><i ng-show="$index==2" class="uk-icon-angle-up bounce"></i></a>
+			</div>
+	</div>
+</div>

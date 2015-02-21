@@ -2,10 +2,11 @@ angular.module('articles').controller('DetailCtrl',function($scope, databank, $r
 
 	databank.query(function(data) {
 		$scope.articles = [];
-
+		var regex = /<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/;
 		angular.forEach(data, function(article) {
-			article.ctags = article.field_tags.replace(/\s+/g, '-').split(',');
+			article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
 	        if (article.nid === $routeParams.id) {
+				article.field_hero_image = regex.exec(article.field_hero_image);
 				$scope.article = article;
 	        } else {
 				// $location.path('/');
@@ -13,7 +14,7 @@ angular.module('articles').controller('DetailCtrl',function($scope, databank, $r
 	    });
 
 	    if(!$scope.article) {
-	    	$location.path('/');
+			// $location.path('/');
 	    }
 		
 	});

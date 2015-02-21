@@ -1,6 +1,5 @@
-angular.module('pages').controller('HomeCtrl',function($scope, categoryService){
+angular.module('pages').controller('HomealtCtrl',function($scope, categoryService){
 
-	
 	categoryService.query(function(data) {
 		var regex = /<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/;
 		$scope.categories = [];
@@ -12,8 +11,4 @@ angular.module('pages').controller('HomeCtrl',function($scope, categoryService){
 		});
 		
 	});
-
-	
-    
-
 });

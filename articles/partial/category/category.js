@@ -3,11 +3,13 @@ angular.module('articles').controller('CategoryCtrl',function($rootScope, $scope
 
 	window.scope = $scope;
 	categoryService.query(function(data) {
-		$scope.categories = [];
+
+		var regex = /<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/;
 		angular.forEach(data, function(category) {
 			
 	        if (category.title === $routeParams.category) {
-				$scope.crap = category;
+				category.field_hero_image = regex.exec(category.field_hero_image);
+				$scope.category = category;
 	        }
 	    });
 	});
@@ -16,11 +18,11 @@ angular.module('articles').controller('CategoryCtrl',function($rootScope, $scope
 		$scope.articles = [];
 
 		angular.forEach(data, function(article) {
-			article.ctags = article.field_tags.replace(/\s+/g, '-').split(',');
+			article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
 	        if (article.field_category === $routeParams.category) {
 				$scope.articles.push(article);
 	        } else {
-				$location.path('/');
+				// $location.path('/');
 	        }
 	    });
 
@@ -30,11 +32,17 @@ angular.module('articles').controller('CategoryCtrl',function($rootScope, $scope
 	    $container.imagesLoaded( function() {
 	        
 	         $container.masonry({
-              columnWidth: '.uk-width-medium-1-3',
-              itemSelector: '.uk-width-medium-1-3'
+              columnWidth: '.uk-width-medium-1-2',
+              itemSelector: '.each-card'
             });
+
 	    });
-		
+	    // $container.masonry({
+     //          columnWidth: '.uk-width-medium-1-3',
+     //          itemSelector: '.uk-width-medium-1-3'
+     //        });
+
+	    
 	});
 
 

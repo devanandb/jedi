@@ -2,8 +2,13 @@ angular.module('articles').controller('TaggedCtrl',function($rootScope, $scope, 
 	databank.query(function(data) {
 		$scope.articles = [];
 
+		
+
+		$scope.currtag = $routeParams.tag;
+
 		angular.forEach(data, function(article) {
-			article.ctags = article.field_tags.replace(/\s+/g, '-').split(',');
+			$scope.currtag = $routeParams.tag;
+			article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
 	        if (article.ctags.indexOf($routeParams.tag) > -1) {
 				$scope.articles.push(article);
 	        } else {
