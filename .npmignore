@@ -4,3 +4,4 @@ node_modules/
 _SpecRunner.html
 .DS_Store
 test-results.xml
+sftp-config.json
