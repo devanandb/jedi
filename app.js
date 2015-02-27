@@ -1,4 +1,4 @@
-angular.module('jedi', ['ui.bootstrap', 'ui.utils', 'ngRoute', 'ngAnimate', 'ngResource', 'pages', 'articles']);
+angular.module('jedi', ['ui.bootstrap', 'ui.utils', 'ngRoute', 'ngAnimate', 'ngResource', 'angular-loading-bar', 'pages', 'articles']);
 
 angular.module('jedi').config(function($routeProvider) {
 
@@ -21,3 +21,4 @@ angular.module('jedi').run(function($rootScope) {
     };
 
 });
+

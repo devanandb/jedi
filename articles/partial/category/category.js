@@ -44,7 +44,4 @@ angular.module('articles').controller('CategoryCtrl',function($rootScope, $scope
 
 	    
 	});
-
-
-	
 });
