@@ -12,10 +12,10 @@
 		
 	</div>
 	<div class="uk-container uk-container-center">
-		<div class="matrix uk-nbfc uk-grid" >
+		<div class="matrix uk-nbfc uk-grid">
 			
 			<!-- <div class="uk-grid mason"> -->
-				<div class="uk-width-large-1-3 uk-width-medium-1-2 uk-width-small-1-1 each-card" ng-repeat="article in articles">
+				<div class="uk-width-large-1-3 uk-width-medium-1-2 uk-width-small-1-1 each-card" ng-repeat="article in articles | orderBy:article.field_order">
 					
 					<div class="uk-panel uk-panel-box flip">
 						<div class="uk-panel-teaser">

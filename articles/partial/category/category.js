@@ -1,47 +1,69 @@
-angular.module('articles').controller('CategoryCtrl',function($rootScope, $scope, databank, categoryService, $routeParams, $location){
+angular.module('articles').controller('CategoryCtrl',function($scope, $http, $routeParams, $location){
 
 
 	window.scope = $scope;
-	categoryService.query(function(data) {
+	$scope.articles = [];
+	// categoryService.query(function(data) {
 
-		var regex = /<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/;
-		angular.forEach(data, function(category) {
+	// 	var regex = /<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/;
+	// 	angular.forEach(data, function(category) {
 			
-	        if (category.title === $routeParams.category) {
-				category.field_hero_image = regex.exec(category.field_hero_image);
-				$scope.category = category;
-	        }
-	    });
-	});
+	//         if (category.title === $routeParams.category) {
+	// 			category.field_hero_image = regex.exec(category.field_hero_image);
+	// 			$scope.category = category;
+	//         }
+	//     });
+	// });
 
-	databank.query(function(data) {
-		$scope.articles = [];
+	// databank.query(function(data) {
+	// 	$scope.articles = [];
 
-		angular.forEach(data, function(article) {
-			article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
-	        if (article.field_category === $routeParams.category) {
-				$scope.articles.push(article);
-	        } else {
-				// $location.path('/');
-	        }
-	    });
+	// 	angular.forEach(data, function(article) {
+	// 		article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
+	//         if (article.field_category === $routeParams.category) {
+	// 			$scope.articles.push(article);
+	//         } else {
+	// 			// $location.path('/');
+	//         }
+	//     });
 
-	    console.log($scope.articles);
-	    var $container = $('.matrix');
+	//     console.log($scope.articles);
+	//     var $container = $('.matrix');
 
-	    $container.imagesLoaded( function() {
+	//     $container.imagesLoaded( function() {
 	        
-	         $container.masonry({
-              columnWidth: '.uk-width-medium-1-2',
-              itemSelector: '.each-card'
-            });
+	//          $container.masonry({
+ //              columnWidth: '.uk-width-medium-1-2',
+ //              itemSelector: '.each-card'
+ //            });
 
-	    });
-	    // $container.masonry({
-     //          columnWidth: '.uk-width-medium-1-3',
-     //          itemSelector: '.uk-width-medium-1-3'
-     //        });
+	//     });
 
 	    
-	});
+	// });
+
+	$http.get('http://cms.designjedi.co/api/category/' + $routeParams.category).
+		success(function(data, status, headers, config){
+			angular.forEach(data, function(article){
+				article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
+				$scope.articles.push(article);
+			});
+
+			var $container = $('.matrix');
+			// init
+			$container.imagesLoaded( function() {
+				$container.isotope({
+				// options
+					itemSelector: '.each-card',
+					layoutMode: 'fitRows'
+				});
+			});
+
+		})
+		.error(function(data, status, headers, config) {
+		// called asynchronously if an error occurs
+		// or server returns response with an error status.
+		});
+
+	
 });
