@@ -42,22 +42,35 @@ angular.module('articles').controller('CategoryCtrl',function($scope, $http, $ro
 	    
 	// });
 
+	var regex = /<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/;
+
+	$http.get('http://cms.designjedi.co/api/categories/' + $routeParams.category).
+		success(function(data, status, headers, config){
+			angular.forEach(data, function(category) {
+				category.field_hero_image = regex.exec(category.field_hero_image);
+				$scope.category = category;
+			});
+		});
+
 	$http.get('http://cms.designjedi.co/api/category/' + $routeParams.category).
 		success(function(data, status, headers, config){
 			angular.forEach(data, function(article){
 				article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
 				$scope.articles.push(article);
-			});
 
-			var $container = $('.matrix');
-			// init
-			$container.imagesLoaded( function() {
-				$container.isotope({
-				// options
-					itemSelector: '.each-card',
-					layoutMode: 'fitRows'
+
+				var $container = $('.matrix');
+				// init
+				$container.imagesLoaded( function() {
+					$container.isotope({
+					// options
+						itemSelector: '.each-card',
+						layoutMode: 'fitRows'
+					});
 				});
 			});
+
+
 
 		})
 		.error(function(data, status, headers, config) {

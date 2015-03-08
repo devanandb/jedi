@@ -25,9 +25,9 @@
 								{{article.title}}
 							</a>
 						</div>
-						<div class="panel-content">
+						<!-- <div class="panel-content">
 							<div ng-bind-html="article.body  | truncate:true:130:' ...' | secureHtml"></div>
-						</div>
+						</div> -->
 						<div ng-show="article.ctags" class="ctags">
 							<span ng-repeat="tag in article.ctags">
 							<a ng-show="tag" ng-href="#/tag/{{tag}}">{{tag}}</a>
