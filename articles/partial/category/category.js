@@ -59,15 +59,22 @@ angular.module('articles').controller('CategoryCtrl',function($scope, $http, $ro
 				$scope.articles.push(article);
 
 
+
 				var $container = $('.matrix');
-				// init
-				$container.imagesLoaded( function() {
-					$container.isotope({
-					// options
-						itemSelector: '.each-card',
-						layoutMode: 'fitRows'
-					});
-				});
+		// init
+		$container.imagesLoaded( function() {
+			$container.isotope({
+			// options
+				itemSelector: '.each-card',
+				masonry: {
+				  columnWidth: '.uk-width-medium-1-2'
+				}
+			});
+		});
+
+
+
+
 			});
 
 
@@ -78,5 +85,16 @@ angular.module('articles').controller('CategoryCtrl',function($scope, $http, $ro
 		// or server returns response with an error status.
 		});
 
+
+
+
+		// $('.flip').hover(function(){
+	 //        $(this).find('.card').addClass('flipped').mouseleave(function(){
+	 //            $(this).removeClass('flipped');
+	 //        });
+	 //        return false;
+	 //    });
+
+	    
 	
 });

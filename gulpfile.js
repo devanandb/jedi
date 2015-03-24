@@ -99,8 +99,8 @@ gulp.task('images', ['clean'], function(){
 });
 
 gulp.task('fonts', ['clean'], function(){
-    return gulp.src('bower_components/font-awesome/fonts/**')
-        .pipe(gulp.dest('dist/bower_components/font-awesome/fonts/'));
+    return gulp.src('fonts/**')
+        .pipe(gulp.dest('dist/fonts/'));
 });
 
 gulp.task('jshint', function(){
