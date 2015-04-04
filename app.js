@@ -19,6 +19,7 @@ angular.module('jedi').run(function($rootScope) {
             this.$apply(fn);
         }
     };
+    
 
 });
 

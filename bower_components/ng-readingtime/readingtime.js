@@ -8,16 +8,16 @@ angular.module('ngReadingTime', [])
       },
 
       text_only: function(time) {
-        var result = 'readable in ';
+        var result = '';
 
         if (!time.minutes && !time.seconds)
           result += 'a moment';
 
         if (time.minutes)
-          result += time.minutes + ' minutes ';
+          result += time.minutes + ' mins ';
 
         if (time.seconds)
-          result += time.seconds + ' seconds';
+          // result += time.seconds + ' seconds';
 
         return result;
       }

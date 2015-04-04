@@ -1,7 +1,7 @@
-<div class="uk-container uk-container-center ">
+<div class="uk-container uk-container-center header">
 	<a href="#" class="logo">Jim Nieters</a>
 
-	<ul class="secondary-nav">
+	<ul class="secondary-nav uk-hidden-small">
 		<!-- <li ng-repeat="category in categories">
 			<a ng-href="#/articles/{{category.title}}">{{category.title}}</a>
 		</li> -->
@@ -15,4 +15,35 @@
 			<a ng-href="#/category/life">life</a>
 		</li>
 	</ul>
+
+	<button class="cmn-toggle-switch cmn-toggle-switch__htx uk-visible-small">
+	  <span>toggle menu</span>
+	</button>
+
+	<ul class="uk-list mob-nav uk-visible-small">
+		<li>
+			<a ng-href="#/category/leadership">leadership</a>
+		</li>
+		<li>
+			<a ng-href="#/category/design">design</a>
+		</li>
+		<li>
+			<a ng-href="#/category/life">life</a>
+		</li>
+	</ul>
+
 </div>
+
+<script type="text/javascript">
+	$('.cmn-toggle-switch').on('click', function(){
+		// console.log('hello');
+		if($('.cmn-toggle-switch').hasClass('active')) {
+			$('.cmn-toggle-switch').removeClass('active');
+			$('.mob-nav').slideUp();
+		} else {
+			$('.cmn-toggle-switch').addClass('active');
+			$('.mob-nav').slideDown();
+		}
+		
+	});
+</script>

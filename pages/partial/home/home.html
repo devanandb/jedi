@@ -9,10 +9,10 @@
 			<div class="uk-height-1-1 uk-vertical-align">
 				<div class="jumbo-blk uk-vertical-align-middle">
 					<div class="blk-title">Jim Nieters</div>
-					<div class="blk-desc uk-hidden-small">
+					<div class="blk-desc ">
 						I am a ux leader who loves to inspire and be inspired by design. Lorem ipsum dolor sit amet.
 					</div>
-					<ul class="links-blk" data-uk-sticky="{top:30}">
+					<ul class="links-blk uk-hidden-small" data-uk-sticky="{top:30,media: 768}">
 						<li><a data-uk-smooth-scroll ng-href="#0">&nbsp;</a></li>
 						<li><a data-uk-smooth-scroll ng-href="#1">&nbsp;</a></li>
 						<li><a data-uk-smooth-scroll ng-href="#2">&nbsp;</a></li>
@@ -54,8 +54,10 @@
 						<div class="blk-title">
 							<a ng-href="#/category/{{category.title}}"><span class="dot"></span>{{category.title}} <i class="uk-icon-angle-right"></i></a>
 						</div>
-						<div class="blk-desc" ng-bind-html="category.body | secureHtml">
-						</div>
+						<div class="blk-desc uk-hidden-small" ng-bind-html="category.body | secureHtml"></div>
+						<div class="blk-desc uk-visible-small" ng-bind-html="category.field_body_mobile | secureHtml"></div>
+
+
 					</div>
 				</div>
 			</div>

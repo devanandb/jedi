@@ -1084,7 +1084,7 @@
     function scrollToElement(ele, options) {
 
         options = $.extend({
-            duration: 1000,
+            duration: 2000,
             transition: 'easeOutExpo',
             offset: 0,
             complete: function(){}
