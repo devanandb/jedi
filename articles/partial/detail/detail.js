@@ -16,6 +16,16 @@ angular.module('articles').controller('DetailCtrl',function($scope, $http, $rout
 	//     }
 		
 	// });
+
+	if (localStorage.getItem('refresh') == 'once') {
+		console.log('alternate');
+		$('.hero-blk').addClass('home-alt');
+
+		localStorage.setItem('refresh','');
+	} else {
+		$('.hero-blk').removeClass('home-alt');
+		localStorage.setItem('refresh', 'once');
+	}
 	var regex = /<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/;
 	$http.get('http://cms.designjedi.co/api/article/' + $routeParams.id).
 	  success(function(data, status, headers, config) {

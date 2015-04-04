@@ -10,8 +10,8 @@
 	background-size: cover;
 }
 
-.hero-blk.home-alt > div {
-	background-color: rgba(10,10,10,0.6);
+.hero-blk.home-alt > div, .hero-blk > div {
+	background-color: rgba(10,10,10,0.5);
 }
 
 
@@ -80,6 +80,7 @@
 
 		.link-blk {
 			text-align: center;
+			z-index: 900;
 		}
 		.pg-link {
 			font-size: 40px;
@@ -106,16 +107,16 @@
 }
 .next-blk {
 	background: none !important;
-		position: absolute;
-		bottom: 10px;
-		left: 50%;
-		margin-left: -20px;
-		a {
-			font-size: 60px;
-			font-weight: 100;
-			color: #ccc;
-		}
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -20px;
+	a {
+		font-size: 60px;
+		font-weight: 100;
+		color: #ccc;
 	}
+}
 
 
 /*div.cover {

@@ -3,6 +3,16 @@ angular.module('articles').controller('CategoryCtrl',function($scope, $http, $ro
 
 	window.scope = $scope;
 	$scope.articles = [];
+	
+	if (localStorage.getItem('refresh') == 'once') {
+		console.log('alternate');
+		$('.hero-blk').addClass('home-alt');
+
+		localStorage.setItem('refresh','');
+	} else {
+		$('.hero-blk').removeClass('home-alt');
+		localStorage.setItem('refresh', 'once');
+	}
 	// categoryService.query(function(data) {
 
 	// 	var regex = /<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/;
@@ -56,21 +66,22 @@ angular.module('articles').controller('CategoryCtrl',function($scope, $http, $ro
 		success(function(data, status, headers, config){
 			angular.forEach(data, function(article){
 				article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
+				article.field_order = parseInt(article.field_order);
 				$scope.articles.push(article);
 
+				var grid = UIkit.grid('.matrix', { /* options */ });
 
+				$(window).resize();
 
-				var $container = $('.matrix');
-		// init
-		$container.imagesLoaded( function() {
-			$container.isotope({
-			// options
-				itemSelector: '.each-card',
-				masonry: {
-				  columnWidth: '.uk-width-medium-1-2'
-				}
-			});
-		});
+				// var $container = $('.matrix');
+				// $container.imagesLoaded( function() {
+				// 	$container.isotope({
+				// 		itemSelector: '.each-card',
+				// 		masonry: {
+				// 		  columnWidth: '.uk-width-medium-1-2'
+				// 		}
+				// 	});
+				// });
 
 
 

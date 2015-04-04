@@ -13,6 +13,16 @@ angular.module('pages').controller('HomeCtrl',function($scope, categoryService){
 		
 	});
 
+	if (localStorage.getItem('refresh') == 'once') {
+		console.log('alternate');
+		$('.hero-blk').addClass('home-alt');
+
+		localStorage.setItem('refresh','');
+	} else {
+		$('.hero-blk').removeClass('home-alt');
+		localStorage.setItem('refresh', 'once');
+	}
+
 	
     
 

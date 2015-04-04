@@ -1,0 +1,32 @@
+{
+  "name": "ng-readingtime",
+  "homepage": "https://github.com/jiin/ng-readingtime",
+  "authors": [
+    "Jiin <neri.barnini@gmail.com>"
+  ],
+  "description": "angular directive to calculate text reading time",
+  "main": "readingtime",
+  "keywords": [
+    "reading",
+    "time",
+    "text"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "9a54de5f53",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "9a54de5f533555f9fd627c17fb71e5af6f301cb6"
+  },
+  "_source": "git://github.com/jiin/ng-readingtime.git",
+  "_target": "*",
+  "_originalSource": "ng-readingtime",
+  "_direct": true
+}

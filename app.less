@@ -3,10 +3,14 @@
 
 @import "bower_components/uikit/less/uikit.less";
 @import "bower_components/uikit/less/core/grid.less";
-@import "bower_components/uikit/less/core/overlay.less";
-@import "bower_components/uikit/less/components/flex.less";
-@import "bower_components/uikit/less/components/sticky.less";
+@import "bower_components/uikit/less/components/dotnav.less";
 
+@import "bower_components/uikit/less/components/slidenav.less";
+
+@import "bower_components/uikit/less/components/slideshow.less";
+
+
+@icon-font-path:                                "fonts";
 
 
 @base-body-font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -144,6 +148,35 @@ body{
 	color: #aaa;
 }
 
+
+@media (max-width: @breakpoint-small-max) {
+	.footer-links {
+		display: block;
+    	text-align: center;
+    	float: none;
+	}
+
+    .footer-nav {
+    	display: block;
+    	text-align: center;
+    	float: none;
+    	li {
+    		/*padding:15px 10px;*/
+    		padding:0px;
+    		margin-left:0px;
+    		margin:20px 5px;
+    		a {
+    			font-size: 20px;
+    			width: 40px;
+    			height: 40px;
+    			line-height: 40px;
+    			border: 1px solid #dddddd;
+    			border-radius: 50%;
+    		}
+    	}
+    }
+
+}
 /*! 
  * angular-loading-bar v0.7.1
  * https://chieffancypants.github.io/angular-loading-bar

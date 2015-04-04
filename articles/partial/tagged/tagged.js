@@ -3,7 +3,15 @@ angular.module('articles').controller('TaggedCtrl',function($rootScope, $scope, 
 		$scope.articles = [];
 
 		
+		if (localStorage.getItem('refresh') == 'once') {
+			console.log('alternate');
+			$('.hero-blk').addClass('home-alt');
 
+			localStorage.setItem('refresh','');
+		} else {
+			$('.hero-blk').removeClass('home-alt');
+			localStorage.setItem('refresh', 'once');
+		}
 		$scope.currtag = $routeParams.tag;
 
 		angular.forEach(data, function(article) {
