@@ -6,13 +6,13 @@
 		<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eos laborum expedita incidunt minus. Dicta architecto qui, quis dolore dolorem aliquam consequatur quas voluptatibus eveniet, veniam in exercitationem, placeat ea!</h1>
 	</div> -->
 
-	<div class="hero-cont tagpg" style="background-image:url(img/tagsbg.jpeg); background-size:cover;">
+	<div class="hero-cont tagpg" style="background-image:url(img/tagbg.png); background-size:cover;">
 		<!-- <img class="" src="img/hero2.jpg" alt=""> -->
 
 		<div class="hero-pg uk-height-1-1">
 			<ng-include src="'templates/header.html'"></ng-include>
 			<div class="uk-container uk-container-center">
-				<div class="pgtitle"><span>#{{currtag}} </span></div>
+				<div class="pgtitle">#<span ng-bind-html="currtag | secureHtml"></span></div>
 				<!-- <p class="uk-hidden-small" ng-bind-html="category.body | secureHtml"></p> -->
 			</div>
 		</div>

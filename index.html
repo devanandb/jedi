@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="jedi">
     <head>
-        <title></title>
+        <title ng-bind-template="{{viewTitle}} | DesignJedi">DesignJedi</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <link href="app.less" type="text/css" rel="stylesheet/less">
@@ -21,6 +21,10 @@
         <script src="bower_components/uikit/js/core/scrollspy.js"></script>
         <script src="bower_components/uikit/js/core/core.js"></script>
         <script src="bower_components/uikit/js/core/grid.js"></script>
+        <script src="bower_components/uikit/js/core/switcher.js"></script>
+        <script src="bower_components/uikit/js/core/tab.js"></script>
+
+
 
 
         <script src="bower_components/uikit/js/components/sticky.js"></script>
@@ -28,6 +32,7 @@
         <script src="bower_components/uikit/js/components/grid.js"></script>
         <script src="bower_components/uikit/js/components/slideshow.js"></script>
         <script src="bower_components/uikit/js/components/slideshow-fx.js"></script>
+
         
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/moment/moment.js"></script>
@@ -37,8 +42,10 @@
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
-        <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+        <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
         <script src="bower_components/ng-readingtime/readingtime.js"></script>
+        <script src="bower_components/angularjs-viewhead/angularjs-viewhead.js"></script>
+
 
         <!-- Add New Bower Component JS Above -->
         <!-- Main App JS -->
@@ -55,9 +62,23 @@
         <script src="articles/partial/detail/detail.js"></script>
         <script src="articles/partial/tagged/tagged.js"></script>
         <script src="pages/partial/homealt/homealt.js"></script>
+        <script src="pages/partial/about/about.js"></script>
         <!-- Add New Component JS Above -->
+
+
         
         <div ng-view></div>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-61820515-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
     </body>
 </html>
 

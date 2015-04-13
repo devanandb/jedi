@@ -1,4 +1,4 @@
-<div  ng-controller="DetailCtrl">
+<div ng-controller="DetailCtrl">
 
 	<div class="hero-cont tagpg" style="background-image:url({{article.field_hero_image[1]}}); background-size:cover;">
 		<!-- <div ng-bind-html="article.field_hero_image | secureHtml"></div> -->
@@ -8,7 +8,7 @@
 		<div class="hero-pg uk-height-1-1">
 			<ng-include src="'templates/header.html'"></ng-include>
 			<div class="uk-container uk-container-center">
-				<div class="pgtitle"><span>{{article.title}} </span></div>
+				<div class="pgtitle"><span view-title>{{article.title}} </span></div>
 				<!-- <p class="uk-hidden-small" ng-bind-html="category.body | secureHtml"></p> -->
 			</div>
 		</div>
@@ -16,11 +16,11 @@
 
 	<div class="uk-container uk-container-center">
 		<div class="uk-grid article-content">
-			<div class="uk-width-7-10">
+			<div class="uk-width-large-7-10 uk-width-small-1-1">
 				<div ng-bind-html="article.body | secureHtml"></div>
 			</div>
 
-			<div class="uk-width-3-10">
+			<div class="uk-width-large-3-10 uk-width-small-1-1 uk-pull-1-1">
 				<div class="cnt-tags">
 					<span ng-repeat="tag in article.ctags">
 						<a ng-href="#/tag/{{tag}}">{{tag}}</a>
@@ -28,7 +28,24 @@
 				</div>
 			</div>
 		</div>
+		<div id="disqus_thread"></div>
 	</div>
 
 	
 </div>
+<ng-include src="'templates/footer.html'"></ng-include>
+
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'designjedi';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>

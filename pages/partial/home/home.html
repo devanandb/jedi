@@ -10,13 +10,13 @@
 				<div class="jumbo-blk uk-vertical-align-middle">
 					<div class="blk-title">Jim Nieters</div>
 					<div class="blk-desc ">
-						I am a ux leader who loves to inspire and be inspired by design. Lorem ipsum dolor sit amet.
+						I am a ux leader who loves to inspire and be inspired by design. Great design disrupts markets and delights users.
 					</div>
 					<ul class="links-blk uk-hidden-small" data-uk-sticky="{top:30,media: 768}">
-						<li><a data-uk-smooth-scroll ng-href="#0">&nbsp;</a></li>
-						<li><a data-uk-smooth-scroll ng-href="#1">&nbsp;</a></li>
-						<li><a data-uk-smooth-scroll ng-href="#2">&nbsp;</a></li>
-						<li><a data-uk-smooth-scroll ng-href="#">&nbsp;</a></li>
+						<li><a data-uk-smooth-scroll ng-href="#0" data-uk-tooltip="{pos:'bottom'}" title="Leadership">&nbsp;</a></li>
+						<li><a data-uk-smooth-scroll ng-href="#1" data-uk-tooltip="{pos:'bottom'}" title="Design">&nbsp;</a></li>
+						<li><a data-uk-smooth-scroll ng-href="#2" data-uk-tooltip="{pos:'bottom'}" title="Life">&nbsp;</a></li>
+						<li><a data-uk-smooth-scroll ng-href="#" data-uk-tooltip="{pos:'bottom'}" title="Home">&nbsp;</a></li>
 					</ul>
 				</div>
 			</div>
@@ -63,7 +63,8 @@
 			</div>
 
 			<div class="next-blk">
-				<a href="#{{$index+1}}" data-uk-smooth-scroll class=""><i ng-hide="$index==2" class="uk-icon-angle-down bounce"></i><i ng-show="$index==2" class="uk-icon-angle-up bounce"></i></a>
+				<a href="#{{$index+1}}" data-uk-smooth-scroll class=""><i ng-hide="$index==3" class="uk-icon-angle-down bounce"></i><i ng-show="$index==3" class="uk-icon-angle-up bounce"></i></a>
 			</div>
 	</div>
 </div>
+<ng-include src="'templates/footer.html'"></ng-include>

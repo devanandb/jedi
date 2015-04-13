@@ -4,7 +4,7 @@ angular.module('articles').controller('CategoryCtrl',function($scope, $http, $ro
 	window.scope = $scope;
 	$scope.articles = [];
 	
-	if (localStorage.getItem('refresh') == 'once') {
+	if (localStorage.getItem('refresh') === 'once') {
 		console.log('alternate');
 		$('.hero-blk').addClass('home-alt');
 
@@ -68,8 +68,9 @@ angular.module('articles').controller('CategoryCtrl',function($scope, $http, $ro
 				article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
 				article.field_order = parseInt(article.field_order);
 				$scope.articles.push(article);
+				console.log($scope.articles);
 
-				var grid = UIkit.grid('.matrix', { /* options */ });
+				var grid = $.UIkit.grid('.matrix', { /* options */ });
 
 				$(window).resize();
 

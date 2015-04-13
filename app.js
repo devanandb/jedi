@@ -1,4 +1,4 @@
-angular.module('jedi', ['ui.bootstrap', 'ui.utils', 'ngRoute', 'ngAnimate', 'ngResource', 'angular-loading-bar', 'ngReadingTime', 'pages', 'articles']);
+angular.module('jedi', ['ui.bootstrap', 'ui.utils', 'ngRoute', 'ngAnimate', 'ngResource', 'angular-loading-bar', 'ngReadingTime', 'pages', 'articles', 'viewhead']);
 
 angular.module('jedi').config(function($routeProvider) {
 
@@ -19,7 +19,6 @@ angular.module('jedi').run(function($rootScope) {
             this.$apply(fn);
         }
     };
-    
 
 });
 

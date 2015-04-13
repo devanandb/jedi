@@ -17,7 +17,7 @@ angular.module('articles').controller('DetailCtrl',function($scope, $http, $rout
 		
 	// });
 
-	if (localStorage.getItem('refresh') == 'once') {
+	if (localStorage.getItem('refresh') === 'once') {
 		console.log('alternate');
 		$('.hero-blk').addClass('home-alt');
 
@@ -34,6 +34,7 @@ angular.module('articles').controller('DetailCtrl',function($scope, $http, $rout
 			article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
 			article.field_hero_image = regex.exec(article.field_hero_image);
 			$scope.article = article;
+			console.log($scope.article);
 		});
 
 	    

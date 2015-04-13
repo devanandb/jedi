@@ -3,7 +3,7 @@ angular.module('articles').controller('TaggedCtrl',function($rootScope, $scope, 
 		$scope.articles = [];
 
 		
-		if (localStorage.getItem('refresh') == 'once') {
+		if (localStorage.getItem('refresh') === 'once') {
 			console.log('alternate');
 			$('.hero-blk').addClass('home-alt');
 
@@ -19,21 +19,16 @@ angular.module('articles').controller('TaggedCtrl',function($rootScope, $scope, 
 			article.ctags = article.field_tags.toLowerCase().replace(/\s+/g, '-').split(',');
 	        if (article.ctags.indexOf($routeParams.tag) > -1) {
 				$scope.articles.push(article);
+
+				var grid = $.UIkit.grid('.matrix', { /* options */ });
+
+				$(window).resize();
 	        } else {
 				// $location.path('/');
 	        }
 	    });
 
-	    console.log($scope.articles);
-	    var $container = $('.matrix');
-
-	    $container.imagesLoaded( function() {
-	        
-	         $container.masonry({
-              columnWidth: '.uk-width-medium-1-3',
-              itemSelector: '.uk-width-medium-1-3'
-            });
-	    });
+	    
 		
 	});
 

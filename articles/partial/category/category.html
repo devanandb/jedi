@@ -5,7 +5,7 @@
 		<div class="hero-pg uk-height-1-1">
 			<ng-include src="'templates/header.html'"></ng-include>
 			<div class="uk-container uk-container-center">
-				<div class="pgtitle"><span>{{category.title}}</span></div>
+				<div class="pgtitle"><span view-title>{{category.title}}</span></div>
 				<p class="uk-hidden-small" ng-bind-html="category.body | secureHtml"></p>
 				<p class="uk-visible-small" ng-bind-html="category.field_body_mobile | secureHtml"></p>
 
@@ -21,10 +21,10 @@
 		</div>
 	</div> -->
 	<div class="uk-container uk-container-center">
-		<div class="matrix uk-nbfc uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1" data-uk-grid-match data-uk-observe data-uk-check-display>
+		<div ng-if="category.title!=='about'" class="matrix uk-nbfc uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1" data-uk-grid-match data-uk-observe data-uk-check-display>
 			
 			<!-- <div class="uk-grid mason"> -->
-				<div class="each-card {{article.field_order}}" ng-repeat="article in articles | filter:searchText">
+				<div class="each-card {{article.field_order}}" ng-repeat="article in articles | orderBy:'field_order' | filter:searchText">
 					
 					<div class="uk-panel uk-panel-box flip">
 						<a href="#/article/{{article.nid}}" class="uk-panel-teaser">
@@ -43,8 +43,21 @@
 						</div> -->
 
 						<div class="card-footer">
-							Reading time: <span ng-reading-time text-to-read="article.body"></span>  <div class="uk-float-right">
-								<i class="uk-icon-tags"></i> {{article.ctags.length}} 
+							Reading time: <span ng-reading-time text-to-read="article.body"></span>
+
+
+
+							<div ng-mouseover="hovered = true" ng-mouseleave="hovered = false" class="uk-float-right tags">
+
+								<div ng-show="hovered" class="taglist">
+									<span  ng-repeat="tag in article.ctags">
+										<a ng-show="tag" ng-href="#/tag/{{tag}}"><i class="uk-icon-tag"></i> &nbsp;{{tag}}</a>
+									</span>
+								</div>
+								
+								<div class="rightside">
+									<i class="uk-icon-tags"></i> {{article.ctags.length}}
+								</div>
 							</div>
 						</div>
 						<!-- <div class="flip">  -->
@@ -76,6 +89,31 @@
 				</div>
 			<!-- </div> -->
 			
+		</div>
+
+		<div ng-if="category.title==='about'">
+
+			
+			<!-- <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#my-id'}">
+			    <li ng-repeat="article in articles">
+			    	<a href="">{{article.title}}</a>
+			    </li>
+			</ul> -->
+
+			
+			<!-- <ul id="my-id" class="uk-switcher">
+			    <li ng-repeat="article in articles">
+			    	<div ng-bind-html="article.body | secureHtml"></div>
+			    </li>
+			</ul> -->
+			<div class="about-blk">
+				<div class="each-blk" ng-repeat="article in articles">
+					<h3>
+						{{article.title}}
+					</h3>
+					<div class="text" ng-bind-html="article.body | secureHtml"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 

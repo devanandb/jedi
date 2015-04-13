@@ -13,7 +13,7 @@ angular.module('pages').controller('HomeCtrl',function($scope, categoryService){
 		
 	});
 
-	if (localStorage.getItem('refresh') == 'once') {
+	if (localStorage.getItem('refresh') === 'once') {
 		console.log('alternate');
 		$('.hero-blk').addClass('home-alt');
 
